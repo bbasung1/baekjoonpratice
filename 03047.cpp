@@ -1,17 +1,12 @@
 #include <algorithm>
 #include <iostream>
-#include <vector>
 using namespace std;
 int main(){
-    vector <int > a;
-    char b[3];
-    for(int i=0;i<3;i++){
-        int k;
-        cin>>k;
-        a.push_back(k);
-    }
+    int a[3];
+    char b[4];
+        cin>>a[0]>>a[1]>>a[2];
     cin>>b;
-    sort(a.begin(),a.end());
+    sort(a,a+3);
     for(char &m:b){
         if(m=='A'){
             cout<<a[0]<<" ";
@@ -23,4 +18,5 @@ int main(){
             cout<<a[2]<<" ";
         }
     }
+    cout << endl;
 }

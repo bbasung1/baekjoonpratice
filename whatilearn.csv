@@ -10,3 +10,4 @@
 10419,sqrt 함수는 cmath 라이브러리에 있음
 01731,일반array는 append 불가/append하고 싶으면 vector로 만들고 push_back()/n번 반복을 --로 구현할시 (n;n>0;n--)
 02386,string으로 뛰어쓰기 있는 문장 입력하고 싶으면 getline이용/string을 소문자로 바꿀 경우 algorithm에 있는 transform을 이용할수 있음;이때 tolower앞에 반드시 ::붙일것
+03047,char로 문자열 받을 경우 반드시 칸수를 (문자열길이)+1으로 할 것
