@@ -6,7 +6,7 @@
 20332,done
 20361,for문에 for문 내에 써야할 변수는 쓰지 말껏(반복 횟수에 영향을 줌)
 20673,done
-65376,분수 계산후 형 변환시 분수 감싸지 말것(int로 되버림)/cout.precision(n):cout에서 소수점자리를 최대 n자리 까지 출력
+06376,분수 계산후 형 변환시 분수 감싸지 말것(int로 되버림)/cout.precision(n):cout에서 소수점자리를 최대 n자리 까지 출력/cout.setf(ios::showpoint);소수점 뒷자리의 0표시
 10419,sqrt 함수는 cmath 라이브러리에 있음
 01731,일반array는 append 불가/append하고 싶으면 vector로 만들고 push_back()/n번 반복을 --로 구현할시 (n;n>0;n--)
 02386,string으로 뛰어쓰기 있는 문장 입력하고 싶으면 getline이용/string을 소문자로 바꿀 경우 algorithm에 있는 transform을 이용할수 있음;이때 tolower앞에 반드시 ::붙일것

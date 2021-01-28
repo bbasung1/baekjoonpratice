@@ -13,7 +13,10 @@ int main(){
             k*=n;
             e+=(long double)1/k;
         }
-        cout.precision(9);
+        cout.precision(10);
+        if(n>=3){
+            cout.setf(ios::showpoint);
+        }
         cout<<n<<" "<<e<<endl;
     }
 }
