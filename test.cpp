@@ -4,26 +4,11 @@
 using namespace std;
 int main()
 {
-    while (1)
-    {
-        int count = 0;
-        char a;
-        string b;
-        getline(cin, b);
-        a = b[0];
-        if (a == '#')
-        {
-            break;
+    char a='a';
+        int n=0;
+        for(n;n<10;n++){
+            cout<<a;
+            a++;
         }
-        b.erase(0, 2);
-        transform(b.begin(), b.end(), b.begin(),::tolower);
-        for (char &c : b)
-        {
-            if (c == a)
-            {
-                count++;
-            }
-        }
-        cout << a << " " << count << endl;
-    }
+        cout<<endl<<n;
 }
