@@ -1,11 +1,6 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 int main(){
-    int a;
-    cin>>a;
-    int b=0;
-    for(int c=64;c>1;c/=2){
-        cout<<c<<endl;
-    }
-    cout<<b;
+    cout<<(int)log10(673);
 }
