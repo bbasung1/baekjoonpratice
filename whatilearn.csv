@@ -1,4 +1,4 @@
-02789,string만으로 for문 돌리기/code 자체는 실패함
+02789,string만으로 for문 돌리기/to_string은 int를 string으로 바꾸는 것:
 05717,done
 07891,done
 11006,기존 int로 for문 돌리기
@@ -12,3 +12,7 @@
 02386,string으로 뛰어쓰기 있는 문장 입력하고 싶으면 getline이용/string을 소문자로 바꿀 경우 algorithm에 있는 transform을 이용할수 있음;이때 tolower앞에 반드시 ::붙일것
 03047,char로 문자열 받을 경우 반드시 칸수를 (문자열길이)+1으로 할 것
 05704,char도 증감 연산 가능/string에서 문자 수를 셀때는 algorithm에 있는 count 함수 이용
+06322,cout << fixed; 소숫점 자리만 precision 함수를 먹도록 함.
+05032,none?
+02736,string length
+02744,c++에 python의 swapcase 명령어는 없음. 그러나 그 외의 tolower나 islower 같은 명령어는 있음.

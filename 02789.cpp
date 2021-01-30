@@ -6,9 +6,17 @@ int main(){
     string a;
     cin>>a;
     string b="CAMBRIDGE";
-    for(char& k : b){
-        cout<<a<<endl;
-        a.erase(find(a.begin(), a.end(), k));
+    for(char &m:a){
+        int c=0;
+        for(char &n:b){
+            if(m==n){
+                c=1;
+                break;
+            }
+        }
+        if(c==0){
+            cout<<m;
+        }
     }
-    cout<<a;
+    cout<<endl;
 }
