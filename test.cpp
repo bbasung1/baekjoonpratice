@@ -1,8 +1,12 @@
 #include <iostream>
-#include <algorithm>
+#include <cmath>
 using namespace std;
 int main(){
-    int a[10]={93,181,245,214,315,36,185,138,216,295};
-    sort(a,a+10);
-    cout<<*max_element(a,a+10)<<endl;
+    int a,b,c;
+    cin>>a>>b>>c;
+    int d=(c-b)/(a-b);
+    if((c-a)%(a-b)!=0){
+        d++;
+    }
+    cout<<d<<endl;
 }
