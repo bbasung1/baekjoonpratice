@@ -7,6 +7,6 @@ int main(){
     for(a;a>0;a--){
         int b;
         cin>>b;
-        cout<<sqrt(b)<<endl;
+        cout<<(int)sqrt(b)<<endl;
     }
 }
