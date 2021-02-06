@@ -3,10 +3,10 @@
 using namespace std;
 int main(){
     int a;
+    int b[100];
     cin>>a;
     for(a;a>0;a--){
-        int b;
-        cin>>b;
-        cout<<(int)sqrt(b)<<endl;
+        cin>>b[a];
+        cout<<b[a]<<endl;
     }
 }
