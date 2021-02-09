@@ -1,16 +1,20 @@
 #include <iostream>
 #include <cmath>
 #include <string>
+#include <algorithm>
 using namespace std;
 int main(){
-    int a;
-    int b[100];
+    string a;
     cin>>a;
-    string c=to_string(a);
-    for(char &k:c){
-        cout<<a<<"\n";
-        int test=k-'0';
-        a+=test;
-        cout<<a<<"\n";
+    int b=0;
+    int c=0;
+    for(char k:a){
+        b++;
+        cout<<b<<"\n";
+        if(k=='6'||k=='9'){
+            c++;
+        }
     }
+    b-=c/2;
+    cout<<b<<"\n";
 }
