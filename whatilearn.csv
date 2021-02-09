@@ -39,3 +39,4 @@
 09498,none
 11728,cin은 int 일시 개행을 해도 구분 되어 넣는다. 따라서 여러줄을 for문으로 받을수 있다/cin.tie(0);cout.tie(0);ios::sync_with_stdio(0); 로 cin과 cout의 속도를 늘릴수 있다. 딘 scanf하고 printf, gets, puts하고 혼용하면 안됨.
 02902,none
+01271,10^1000승은 c++에서는 정수로 처리할수 없다. 파이썬을 써야 한다
