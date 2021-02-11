@@ -1,18 +1,19 @@
-#include <iostream>
-#include <string>
-#include <algorithm>
+#include <bits/stdc++.h>
+
 using namespace std;
+
 int main(){
-    int a;
-    cin>>a;
-    for(a;a>=0;a--){
-        cout<<a<<"\n";
-        string b;
+    int a,c,d;
+    string b;
+    cin >> a;
+    getchar();
+    while(a--){
+        c = d = 0;
         getline(cin,b);
-        int c=count(b.begin(),b.end(),'g');
+        c+=count(b.begin(),b.end(),'g');
         c+=count(b.begin(),b.end(),'G');
-        int d=count(b.begin(),b.end(),'b');
-        d+=count(b.begin(),b.end(),'G');
+        d+=count(b.begin(),b.end(),'b');
+        d+=count(b.begin(),b.end(),'B');
         if(c>d){
             cout<<b<<" is GOOD\n";
         }
@@ -23,4 +24,5 @@ int main(){
             cout<<b<<" is A BADDY\n";
         }
     }
+    return 0;
 }
