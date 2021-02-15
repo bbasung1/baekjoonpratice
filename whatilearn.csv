@@ -67,3 +67,4 @@
 10804,c 배열의 a번째부터 b번째 reverse:reverse(c+(a-1);;c+b)
 01551,구분이 공백이 아니면 getline으로 받은후 stoi를 사용한다.
 02577,none
+02711,none
