@@ -5,3 +5,4 @@ func main(){
 	fmt.Scanln(&a,&b)
 	fmt.Print(a-b)
 }
+//test
