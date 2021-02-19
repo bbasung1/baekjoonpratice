@@ -9,8 +9,12 @@ int main(){
 		sum+=a[i];
 	}
     sort(a,a+9);
+    int b=0;
 	for(int i=0;i<8;i++){
 		for(int j=i+1;j<9;j++){
+            if(b==1){
+                return 0;
+            }
 			if(sum==100+a[i]+a[j]){
 				for(int k=0;k<9;k++){
 					if(k==i||k==j){
@@ -20,6 +24,7 @@ int main(){
 						cout<<a[k]<<"\n";
 					}
 				}
+                b=1;
 			}
 		}
 	}
