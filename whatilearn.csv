@@ -110,5 +110,5 @@
 02920,none
 01769,none
 11382,none
-02480,세 수 a,b,c에서의 최대값 구하기:(a>b ? a>c ? a : c : b>c ? b : c)
+02480,세 수 a/b/c에서의 최대값 구하기:(a>b ? a>c ? a : c : b>c ? b : c)
 01373,string 자체는 iostream만 include 해도 쓸 수 있다.
