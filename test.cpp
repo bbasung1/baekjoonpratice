@@ -2,10 +2,11 @@
 #include<string>
 using namespace std;
 int main(){
-/*	string a;
-	cin>>a;
-	cout<<a.length()<<"\n";*/
-	for(int i=2;i>0;i--){
-		cout<<i;
+	int a;
+	while((cin>>a)){
+		if(a==EOF){
+			break;
+		}
+		cout<<a<<"\n";
 	}
 }
