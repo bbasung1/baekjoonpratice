@@ -160,3 +160,5 @@
 15727,none
 10158,a길이의 c지점을 시작으로 e초동안 왕복했을때의 지점:((c+e)/a)%2?a-(c+e)%a:(c+e)%a
 01427,reverse를 쓰지 않고 string을 거꾸로 출력하는 법:     for(auto it = a.rbegin(); it != a.rend(); ++it) {  std::cout << *it; }
+01764,(py)set를 이용하면 빠르게 교집합을 구할수 있다.
+11399,(py)입출력이 적으면 오히려 input과 print가 아주 약간 더 빠를 수도 있다.
