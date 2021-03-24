@@ -162,8 +162,8 @@
 01427,reverse를 쓰지 않고 string을 거꾸로 출력하는 법:     for(auto it = a.rbegin(); it != a.rend(); ++it) {  std::cout << *it; }
 01764,(py)set를 이용하면 빠르게 교집합을 구할수 있다.
 11399,(py)입출력이 적으면 오히려 input과 print가 아주 약간 더 빠를 수도 있다.
-02740,zip(*a):list의 행과 열을 바꿈.행렬 곱에 유용
 01920,이진 탐색
 01065,none
 05361,소숫점 뒷자리만 조절:cout << fixed << setprecision(2)
 01978,02153과 동일
+02740,zip(*a):list의 행과 열을 바꿈.행렬 곱에 유용
