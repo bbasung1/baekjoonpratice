@@ -175,3 +175,4 @@
 01212,8진수 정도는 그냥 배열로 모든 값을 넣어서 해결한다.
 15904,index를 찾을떄 algorithm 안에 있는 find 보다 string 안에 있는 find를 쓰는것이 더 좋다.
 15668,배열 사이즈에는 제한이 있는것같다.
+11050,이항계수=nCr;;c++에서 nCr 구하는 법:for(int i=0;i<k;i++) ans*=(n-i);for(int i=1;i<=k;i++) ans/=i;
