@@ -1,24 +1,27 @@
 #include <iostream>
 #include <string>
+#include <algorithm>
 using namespace std;
 int main(){
+    cin.tie(0);cout.tie(0);ios::sync_with_stdio(0);
     int a;
     cin>>a;
     cin.ignore();
     while(a--){
         string b;
         getline(cin,b);
-        for(int i=0;i<b.size();i++){
-            if(b[i]==' '){
-                for(int j=i-1;b[j]!=' '&&j>=0;j--){
-            cout<<b[j];
-        }
-        cout<<" ";
+        int sid=0;
+        while(true){
+            int fid=b.find(" ",sid);
+            if(fid==-1){
+                reverse(b.begin()+sid,b.end());
+                break;
             }
-        }
-            for(int j=b.size()-1;b[j]!=' '&&j>=0;j--){
-                cout<<b[j];
+            else{
+                reverse(b.begin()+sid,b.begin()+fid);
             }
-            cout<<"\n";
+            sid=(fid+1);
+        }
+        cout<<b<<"\n";
     }
 }

@@ -181,3 +181,4 @@
 01120,none
 04796,사칙연산 안에서도 삼항연산자를 넣을 수 있다.
 01158,vector eraser는 iter 형만 받으므로 a.begin()+int 식으로 써야 한다.
+09093,find와 replace 다루는 법.
