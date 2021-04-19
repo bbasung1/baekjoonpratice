@@ -4,10 +4,10 @@ int main(){
     int a;
     cin>>a;
     for(a;a>0;--a){
-        int b[1000];
         int c;
         cin>>c;
         int sum=0;
+        int *b=new int[c];
         for(int i=0;i<c;++i){
             cin>>b[i];
             sum+=b[i];
@@ -19,6 +19,7 @@ int main(){
                 ++pp;
             }
         }
+        delete [] b;
         float k=(float)pp/c;
         printf("%.3f%%\n",k*100);
     }
