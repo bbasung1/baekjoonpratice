@@ -1,6 +1,4 @@
 #include <iostream>
-#include <algorithm>
-#include <vector>
 using namespace std;
 int main(){
     int a;
@@ -8,12 +6,14 @@ int main(){
     for(a;a>0;a--){
         int b;
         cin>>b;
-        vector <int> c;
+        int min=101;
+        int max=-1;
         for(b;b>0;b--){
             int d;
             cin>>d;
-            c.push_back(d);
+            if(min>d)min=d;
+            if(max<d)max=d;
         }
-        cout<<2*(*max_element(c.begin(),c.end())-*min_element(c.begin(),c.end()))<<endl;
+        cout<<2*(max-min)<<endl;
     }
 }
