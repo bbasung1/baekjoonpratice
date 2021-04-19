@@ -19,5 +19,6 @@ int main(){
             }
         }
         cout<<"Class "<<k<<"\nMax "<<c[b-1]<<", Min "<<c[0]<<", Largest gap "<<e<<"\n";
+        delete []c;
     }
 }
