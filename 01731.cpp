@@ -1,22 +1,19 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 int main(){
     int n;
     int c;
     cin>>n;
-    vector <int> a;
-    for(n;n>0;n--){
-        int b;
-        cin>>b;
-        a.push_back(b);
+    int *a=new int[n];
+    for(int i=0;i<n;i++){
+        cin>>a[i];
     }
     if(2*a[1]==a[0]+a[2]){
         c=a[1]-a[0];
-        cout<<a.back()+c<<endl;
+        cout<<a[n-1]+c<<endl;
     }
     else if(a[1]*a[1]==a[0]*a[2]){
         c=a[1]/a[0];
-        cout<<a.back()*c<<endl;
+        cout<<a[n-1]*c<<endl;
     }
 }
