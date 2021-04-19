@@ -4,7 +4,7 @@ int main(){
     int a;
     cin>>a;
     int max=0;
-    int b[1000];
+    int *b=new int[a];
     for(int i=0;i<a;i++){
         cin>>b[i];
         if(b[i]>max){
@@ -17,4 +17,5 @@ int main(){
     }
     sum/=a;
     cout<<sum<<"\n";
+    delete [] b;
 }
