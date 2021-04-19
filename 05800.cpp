@@ -1,4 +1,3 @@
-#include <vector>
 #include <iostream>
 #include <algorithm>
 using namespace std;
@@ -8,19 +7,17 @@ int main(){
     for(short k=1;k<=a;k++){
         short b;
         cin>>b;
-        vector <short> c;
+        short *c=new short[b];
         for(short i=0;i<b;i++){
-            short d;
-            cin>>d;
-            c.push_back(d);
+            cin>>c[i];
         }
         short e=0;
-        sort(c.begin(),c.end());
-        for(short i=0;i<c.size()-1;i++){
+        sort(c,c+b);
+        for(short i=0;i<b-1;i++){
             if(c[i+1]-c[i]>e){
                 e=c[i+1]-c[i];
             }
         }
-        cout<<"Class "<<k<<"\nMax "<<c[c.size()-1]<<", Min "<<c[0]<<", Largest gap "<<e<<"\n";
+        cout<<"Class "<<k<<"\nMax "<<c[b-1]<<", Min "<<c[0]<<", Largest gap "<<e<<"\n";
     }
 }
