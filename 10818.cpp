@@ -1,17 +1,17 @@
 #include <iostream>
-#include <vector>
 #include <algorithm>
 using namespace std;
 int main(){
+    cin.tie(0);cout.tie(0);ios::sync_with_stdio(0);
     int n;
     cin>>n;
-    vector <int> i;
+    int min=1000001;
+    int max=-1000001;
     for(n;n>0;n--){
         int b;
         cin>>b;
-        i.push_back(b);
+    if(min>b)min=b;
+    if(max<b)max=b;
     }
-    int min=*min_element(i.begin(),i.end());
-    int max=*max_element(i.begin(),i.end());
     cout<<min<<" "<<max<<endl;
 }
