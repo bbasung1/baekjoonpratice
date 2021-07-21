@@ -1,12 +1,12 @@
 #include <iostream>
 #include <algorithm>
 using namespace std;
-long long pw(long long a,long long b){
+long long pw(unsigned long long a,unsigned long long b){
 	if(b==1){
 		return a%1000000007;
 	}
 	else{
-		long long x=pw(a,b/2);
+		unsigned long long x=pw(a,b/2);
 		if(b%2==0){
 			return (x*x)%1000000007;
 		}
@@ -17,7 +17,7 @@ long long pw(long long a,long long b){
 }
 int main(){
 	cin.tie(0);cout.tie(0);ios::sync_with_stdio(0);
-    long long a,b;
+    unsigned long long a,b;
     cin>>a>>b;
     cout<<pw(a,b)<<"\n";
 }
