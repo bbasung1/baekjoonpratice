@@ -1,18 +1,22 @@
 #include <iostream>
 #include <vector>
 #include <queue>
+#include <algorithm>
 using namespace std;
-bool a[1001][1001];
+//bool a[1001][1001];
 bool chb[1001];
 bool chd[1001];
+vector <int> adj[1001];
 int b;
 void dfs(int index) {
     chd[index] = true;
     cout << index << " ";
-    for (int i = 1; i <=b; i++) {
-        if (a[index][i]&&!chd[i]) {
-            dfs(i);
+    for (int i = 0; i <adj[index].size(); i++) {
+        int next = adj[index][i];
+        if (chd[next]) {
+            continue;
         }
+        dfs(next);
     }
 }
 void bfs(int first) {
@@ -23,11 +27,12 @@ void bfs(int first) {
     while (!g.empty()) {
         int cur = g.front();
         g.pop();
-        for (int i = 1; i <=b; i++) {
-            if (a[cur][i]&&!chb[i]) {
-                g.push(i);
-                chb[i] = true;
-                cout << i << " ";
+        for (int i = 0; i <adj[cur].size(); i++) {
+            int next = adj[cur][i];
+            if (!chb[next]) {
+                chb[next] = true;
+                cout << next << " ";
+                g.push(next);
             }
         }
     }
@@ -38,8 +43,13 @@ int main() {
     int e, f;
     for (int i = 0; i < c; i++) {
         cin >> e >> f;
-        a[e][f] = 1;
-        a[f][e] = 1;
+        /*a[e][f] = 1;
+        a[f][e] = 1;*/
+        adj[e].push_back(f);
+        adj[f].push_back(e);
+    }
+    for (int i = 1; i <= 1000; i++) {
+        sort(adj[i].begin(), adj[i].end());
     }
     dfs(d);
     cout << "\n";
