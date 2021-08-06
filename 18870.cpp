@@ -1,22 +1,21 @@
 #include <iostream>
+#include <set>
 #include <algorithm>
+#include <vector>
 using namespace std;
-int main(){
-    int a;
-    cin.tie(0);cout.tie(0);ios::sync_with_stdio(0);
-    cin>>a;
-    int *k=new int[a];
-    for(int i=0;i<a;i++){
-        cin>>k[i];
-    }
-        for(int i=0;i<a;i++){
-            int b=0;
-        for(int j=0;j<a;j++){
-            if(k[i]>k[j]){
-                b++;
-            }
-        }
-        cout<<b<<" ";
-    }
-    delete []k;
+int main() {
+	cin.tie(0); cout.tie(0); ios::sync_with_stdio(0);
+	int b;
+	cin >> b;
+	int* c = new int[b];
+	for (int i = 0; i < b; i++) {
+		cin >> c[i];
+		//a.push_back(c[i]);
+	}
+	vector <int> a(c,c+b);
+	sort(a.begin(), a.end());
+	a.erase(unique(a. begin(), a.end()), a.end());
+	for (int i = 0; i < b; i++) {
+		cout <<lower_bound(a.begin(),a.end(),c[i])-a.begin() << " ";
+	}
 }
