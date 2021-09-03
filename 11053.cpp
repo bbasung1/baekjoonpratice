@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 using namespace std;
 int main(){
     int a;
@@ -7,12 +8,17 @@ int main(){
     for(int i=0;i<a;i++){
         cin>>b[i];
     }
-    int c=0;
+    int *d=new int[a];
+    int c=-1;
     int cnt=0;
+    //sort(b,b+a);
     for(int i=0;i<a;i++){
-        if(b[i]>c){
-            c=b[i];
-            cnt++;
+        d[i]=1;
+        for(int j=i;j>=0;j--){
+            if(b[i]>b[j]){
+                d[i]=max(d[i],d[j]+1);
+            }
+            cnt=max(d[i],cnt);
         }
     }
     cout<<cnt<<"\n";
