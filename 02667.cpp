@@ -53,3 +53,59 @@ int main() {
             cout<<p[i]<<"\n";
         }
     }
+    /*bfs
+    #include <iostream>
+#include <queue>
+#include <string>
+#include <vector>
+#include <algorithm>
+using namespace std;
+int a,b;
+bool vis[26][26];
+string map[26];
+short dx[4]={1,0,-1,0};
+short dy[4]={0,1,0,-1};
+vector <int>v;
+void bfs(int x,int y){
+    b=1;
+    queue<pair<int,int>> q;
+    q.push(make_pair(x,y));
+    while(!q.empty()){
+        int x=q.front().first;
+        int y=q.front().second;
+        vis[x][y]=1;
+        q.pop();
+        for(int i=0;i<4;i++){
+            int nx=x+dx[i];
+            int ny=y+dy[i];
+            if(0<=nx&&nx<a&&0<=ny&&ny<a){
+                if(map[nx][ny]=='1'&&vis[nx][ny]==0){
+                    q.push({nx,ny});
+                    vis[nx][ny]=1;
+                   b+=1;
+                }
+            }
+        }
+    }
+    v.push_back(b);
+    b=0;
+}
+int main(){
+    cin>>a;
+    for(int i=0;i<a;i++){
+        cin>>map[i];
+    }
+    for(int i=0;i<a;i++){
+        for(int j=0;j<a;j++){
+            if(map[i][j]=='1'&&vis[i][j]==0){
+                bfs(i,j);
+            }
+        }
+    }
+    sort(v.begin(),v.end());
+    cout<<v.size()<<"\n";
+    for(int i=0;i<v.size();i++){
+        cout<<v[i]<<"\n";
+    }
+}
+*/
