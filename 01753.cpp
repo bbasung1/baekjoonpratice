@@ -31,6 +31,7 @@ int main(){
         for(int i=0;i<d[cur].size();i++){
             int next=d[cur][i].first;
             int nextdis=d[cur][i].second;
+            if(e[cur]<dis)continue;
             if(nextdis+dis<e[next]){
                 e[next]=nextdis+dis;
                 pq.push(make_pair(-e[next],next));
