@@ -331,3 +331,4 @@
 22193,(py)input으로 받으면 기본적으로 str로 저장됨/python int는 매우 크다
 02238,람다;sort
 02460,none
+11727,dp
