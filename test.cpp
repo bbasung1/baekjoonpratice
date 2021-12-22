@@ -1,40 +1,27 @@
 #include <iostream>
 #include <queue>
 #include <vector>
+#include <algorithm>
+#include <string>
 using namespace std;
-vector<pair<int,int>>d[11];
 int main(){
-    int a,b,c;
-    cin>>a>>b>>c;
-    vector <int>e(a+1);
-    for(int i=1;i<=a;i++){
-        e[i]=10000000;
-    }
-    for(int i=0;i<b;i++){
-        int q,z,x;
-        cin>>q>>z>>x;
-        d[q].push_back(make_pair(z,x));
-    }
-    e[c]=0;
-    priority_queue<pair<int,int>>pq;
-    pq.push(make_pair(c,0));
-    while(!pq.empty()){
-        int cur=pq.top().first;
-        int dis=-pq.top().second;
-        pq.pop();
-        if(e[cur]<dis){
-            continue;
+    vector <int>a={0, 0, 0, 0, 0, 0};
+    vector <int>b={38, 19, 20, 40, 15, 25};
+    int c=0,d=0;
+    for(int i=0;i<6;i++){
+        if(find(b.begin(),b.end(),a[i])!=b.end()){
+            c++;
+            d++;
         }
-        for(int i=0;i<d[cur].size();i++){
-            int next=d[cur][i].first;
-            int nextdis=dis+d[cur][i].second;
-            if(nextdis<e[next]){
-                e[next]=nextdis;
-                pq.push(make_pair(next,-nextdis));
-            }
+        else if(a[i]==0){
+            c++;
         }
     }
-    for(int i=1;i<=a;i++){
-        cout<<e[i]<<" ";
+    if(c==0){
+        c++;
     }
+    if(d==0){
+        d++;
+    }
+    cout<<7-c<<" "<<7-d<<"\n";
 }
