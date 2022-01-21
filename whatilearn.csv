@@ -342,3 +342,4 @@
 01343,replace
 12760,max;max_element
 01417,우선순위 큐
+02294,dp;dp로 min 사용시 dp[0]는 0이여야 함.
