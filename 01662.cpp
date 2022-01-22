@@ -6,39 +6,29 @@ using namespace std;
 int main(){
     string a;
     cin>>a;
-    int cur=0;
+    int cnt=0;
     stack<int>plus;
     stack<int>mul;
-    while(a.find('(',cur)!=string::npos){
-        int tmp=a.find('(',cur);
-        string tmp1=a.substr(tmp-1,1);
-        if(a[tmp+1]==')'){
-            mul.push(stoi(tmp1));
-            plus.push(0);
-            cur=tmp+2;
-            continue;
+    int res=0;
+    for(int i=0;i<a.size();i++){
+        if(a[i]=='('){
+            cnt-=1;
+            int tmp1=stoi(a.substr(i-1,1));
+            mul.push(tmp1);
+            plus.push(cnt);
+            cnt=0;
+        }else if(a[i]==')'){
+            int tmp2=mul.top();
+            mul.pop();
+            tmp2*=cnt;
+            int p=plus.top();
+            plus.pop();
+            cnt=p+tmp2;
         }
-        string tmp2=a.substr(cur,(tmp-1)-cur);
-        mul.push(stoi(tmp1));
-        plus.push(tmp2.size());
-        cur=tmp+1;
+        else{
+            cnt++;
+        }
+        //cout<<cnt<<"\n";
     }
-    if(a.find(')')==string::npos){
-        cout<<a.size();
-        return 0;
-    }
-    int cl=a.find(')',cur);
-    string t2=a.substr(cur,cl-cur);
-    cout<<t2<<"\n";
-    int res=t2.size();
-    //cout<<"1단계 검증\n";
-    while(!mul.empty()){
-        cout<<mul.top()<<" "<<plus.top()<<"\n";
-        res*=mul.top();
-        res+=plus.top();
-        //cout<<res<<"\n";
-        mul.pop();
-        plus.pop();
-    }
-    cout<<res<<"\n";
+    cout<<cnt<<"\n";
 }
