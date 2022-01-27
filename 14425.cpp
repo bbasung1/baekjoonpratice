@@ -1,23 +1,21 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include <map>
 using namespace std;
 int main(){
     cin.tie(0);cout.tie(0);ios::sync_with_stdio(0);
     int a,b;
     cin>>a>>b;
-    map<string,bool>c;
+    vector <string>c(a);
     int d=0;
     while(a--){
-        string tmp;
-        cin>>tmp;
-        c.insert({tmp,1});
+        cin>>c[a];
     }
+    sort(c.begin(),c.end());
     while(b--){
         string tmp;
         cin>>tmp;
-        if(c[tmp]){
+        if(!binary_search(c.begin(),c.end(),tmp)){
             d++;
         }
     }
