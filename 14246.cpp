@@ -11,15 +11,14 @@ int main(){
     int start=0,end=0;
     long long sum=0,ans=0;
     while(end<=a){
-        if(sum>=b){
-            ans+=a-end;
+        //cout<<end<<"\n";
+        if(sum>b){
+          //  cout<<"t1:"<<a-end<<"\n";
+            ans+=a-end+1;
             sum-=c[start++];
         }
         else{
             sum+=c[end++];
-        if(sum>=b){
-            ans+=(a-end);
-        }
         }
     }
     cout<<ans<<"\n";
