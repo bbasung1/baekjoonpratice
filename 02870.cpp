@@ -11,42 +11,32 @@ int main(){
         string b;
         cin>>b;
         string tmp;
+        bool ck=0;
+        bool ch=0;
         for(auto i:b){
-            if(i>='0'&&i<='9'){
+            if(i>='1'&&i<='9'){
                 tmp+=i;
-                
+                ck=1;
+            }else if(i=='0'){
+                    ch=1;
+                if(ck){
+                    tmp+=i;
+                }
             }
             else if(!tmp.empty()){
-                if(tmp[0]!='0'){
-                    cout<<tmp<<"n\n";
                     c.push_back(tmp);
-                }else{
-                    tmp.erase(remove(tmp.begin(),tmp.end(),'0'),tmp.end());
-                    cout<<tmp<<"k\n";
-                    if(tmp.empty()){
-                        c.push_back("0");
-                    }else{
-                    c.push_back(tmp);
-                    }
-                }
                     tmp.clear();
+                    ck=0;ck=0;
                 }
-        }
+            else if(ch){
+                c.push_back("0");
+            }
+        };
         if(!tmp.empty()){
-            if(tmp[0]!='0'){
-                    cout<<tmp<<"n\n";
-                    c.push_back(tmp);
-                }else{
-                    tmp.erase(remove(tmp.begin(),tmp.end(),'0'),tmp.end());
-                    cout<<tmp<<"k\n";
-                    if(tmp.empty()){
-                        c.push_back("0");
-                    }else{
-                    c.push_back(tmp);
-                    }
-                }
-                    tmp.clear();
-                }
+            c.push_back(tmp);
+        }else if(ch){
+            c.push_back("0");
+        }
     }
     sort(c.begin(),c.end());
     for(auto i:c){
