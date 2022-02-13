@@ -1,20 +1,16 @@
 #include <iostream>
 using namespace std;
 int main(){
-	int a;
-	cin>>a;
-	for(int i=0;i<a;i++){
-		for(int j=0;j<=2*a-1;j++){
-			if(j<i||j>(2*a)-i&&j!=0){
-				cout<<" ";
-			}
-			else if(j>i&&j<(2*a)-i){
-				cout<<"*";
-			}
-            /*else{
-                continue;
-            }*/
-		}
-		cout<<"\n";
-	}
+    int n;
+    cin>>n;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<2*n-1;j++){
+            if(j>=i&&j<(2*n-1)-i){
+                cout<<"*";
+            }else if(j<i){
+                cout<<" ";
+            }
+        }
+        cout<<"\n";
+    }
 }
