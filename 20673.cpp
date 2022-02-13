@@ -7,7 +7,7 @@ int main(){
     if(a<=50&&b<=10){
         cout<<"White"<<endl;
     }
-    else if(b>=30){
+    else if(b>30){
         cout<<"Red"<<endl;
     }
     else{
