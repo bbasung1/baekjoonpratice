@@ -11,34 +11,40 @@ int main(){
         string b;
         cin>>b;
         string tmp;
-        bool ck=0;
-        bool ch=0;
         for(auto i:b){
-            if(i>='1'&&i<='9'){
+            if(i>='0'&&i<='9'){
                 tmp+=i;
-                ck=1;
-            }else if(i=='0'){
-                    ch=1;
-                if(ck){
-                    tmp+=i;
-                }
             }
             else if(!tmp.empty()){
-                    c.push_back(tmp);
-                    tmp.clear();
-                    ck=0;ck=0;
+                bool d=1;
+                for(int j=0;j<tmp.size();j++){
+                    if(tmp[j]!='0'){
+                        c.push_back(tmp.substr(j));
+                        d=0;
+                        break;
+                    }
                 }
-            else if(ch){
+                if(d){
+                    c.push_back("0");
+                }
+                tmp="";
+                }
+        }
+        if(!tmp.empty()){
+            bool d=1;
+            for(int j=0;j<tmp.size();j++){
+                if(tmp[j]!='0'){
+                    c.push_back(tmp.substr(j));
+                    d=0;
+                    break;
+                }
+            }
+            if(d){
                 c.push_back("0");
             }
-        };
-        if(!tmp.empty()){
-            c.push_back(tmp);
-        }else if(ch){
-            c.push_back("0");
         }
     }
-    sort(c.begin(),c.end());
+    sort(c.begin(),c.end(),[](const string &a,const string &b){if(a.size()==b.size()){return a<b;}return a.size()<b.size();});
     for(auto i:c){
         cout<<i<<"\n";
     }
