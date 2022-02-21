@@ -1,16 +1,24 @@
 #include <iostream>
-int main() {
-	int a1, a0;
-	scanf("%d %d", &a1, &a0);
-	int c;
-	scanf("%d", &c);
-	int n0;
-	scanf("%d", &n0);
-	for (int i = n0; i < 10000; i++) {
-		if (c * i > a1 * i + a0) {
-			printf("0\n");
-			return 0;
-		}
-	}
-	printf("1\n");
+using namespace std;
+int main(){
+    int a1,a0;
+    cin>>a1>>a0;
+    int c;
+    cin>>c;
+    int n0;
+    cin>>n0;
+    if(a1==c){
+        if(0<a0){
+            cout<<"1\n";
+        }else{
+            cout<<"0\n";
+        }
+    }else{
+        //cout<<"!!\n";
+    if(n0<-(a0/(a1-c))||a1<c){
+        cout<<"0\n";
+    }else{
+        cout<<"1\n";
+    }
+    }
 }
