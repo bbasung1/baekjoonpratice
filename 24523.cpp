@@ -4,26 +4,26 @@
 #include <algorithm>
 using namespace std;
 int main(){
-    cin.tie();cout.tie();ios::sync_with_stdio();
     int a;
     cin>>a;
     vector<int>b(a);
     for(int i=0;i<a;i++){
         cin>>b[i];
     }
-    stack<int>c;
-    for(int i=0;i<a;i++){
-        while(!c.empty()&&b[c.top()]!=b[i]){
-            b[c.top()]=i+1;
-            c.pop();
+    vector<int>c(a);
+    int i=0;
+    int tmp=0;
+    for(;i<a-1;i++){
+        if(b[i]!=b[i+1]){
+            for(;tmp<=i;tmp++){
+                c[tmp]=i+2;
+            }
         }
-        c.push(i);
     }
-    while(!c.empty()){
-        b[c.top()]=-1;
-        c.pop();
+    for(;tmp<a;tmp++){
+        c[tmp]=-1;
     }
-    for(auto i:b){
+    for(auto i:c){
         cout<<i<<" ";
     }
     cout<<"\n";
