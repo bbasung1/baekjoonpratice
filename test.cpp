@@ -1,27 +1,39 @@
 #include <iostream>
-#include <queue>
 #include <vector>
-#include <algorithm>
 #include <string>
 using namespace std;
-int main(){
-    vector <int>a={0, 0, 0, 0, 0, 0};
-    vector <int>b={38, 19, 20, 40, 15, 25};
-    int c=0,d=0;
-    for(int i=0;i<6;i++){
-        if(find(b.begin(),b.end(),a[i])!=b.end()){
-            c++;
-            d++;
-        }
-        else if(a[i]==0){
-            c++;
-        }
-    }
-    if(c==0){
-        c++;
-    }
-    if(d==0){
-        d++;
-    }
-    cout<<7-c<<" "<<7-d<<"\n";
+
+const int MAX = 8 + 1;
+
+int N, M;
+int arr[MAX];
+bool visited[MAX];
+
+void func(int cnt,string k)
+{
+	if (cnt == M)
+	{
+		for (int i = 0; i < M; i++)
+			cout << k[arr[i]-1] << " ";
+		cout << "\n";
+		return;
+	}
+
+	for (int i = 1; i <= N; i++)
+		if (!visited[i])
+		{
+			visited[i] = true;
+			arr[cnt] = i;
+			func(cnt + 1,k);
+			visited[i] = false;
+		}
+}
+
+int main(void)
+{
+    string k="vnasgi";
+	cin >> N >> M;
+
+	func(0,k);
+	return 0;
 }
