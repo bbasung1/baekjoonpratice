@@ -8,14 +8,13 @@ const int MAX = 8 + 1;
 int N, M;
 int arr[MAX];
 bool visited[MAX];
-
 void func(int cnt,string k)
 {
 	if (cnt == M)
 	{
 		for (int i = 0; i < M; i++)
-			cout << k[arr[i]-1] << " ";
-		cout << "\n";
+			cout << k[arr[i]-1];
+		cout << "n\n";
 		return;
 	}
 
@@ -31,7 +30,7 @@ void func(int cnt,string k)
 
 int main(void)
 {
-    string k="vnasgi";
+    string k="vasgi";
 	cin >> N >> M;
 
 	func(0,k);
